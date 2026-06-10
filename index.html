@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محكمة الحب ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff6fa5,#ffc4dd);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.card{
+    background:white;
+    width:90%;
+    max-width:650px;
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+h1{
+    color:#ff2f75;
+    margin-bottom:15px;
+}
+
+h2{
+    margin:15px 0;
+    color:#444;
+}
+
+p{
+    font-size:18px;
+    margin:10px 0;
+    color:#555;
+}
+
+.evidence{
+    text-align:right;
+    margin:20px 0;
+    background:#fff0f6;
+    padding:15px;
+    border-radius:15px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    margin:10px;
+    font-size:17px;
+    transition:.3s;
+}
+
+.love{
+    background:#ff2f75;
+    color:white;
+}
+
+.reject{
+    background:#444;
+    color:white;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+#result{
+    display:none;
+}
+
+.heart{
+    position:fixed;
+    font-size:25px;
+    animation:fly 5s linear forwards;
+}
+
+@keyframes fly{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="court">
+
+    <h1>👨‍⚖️ محكمة الحب العليا ❤️</h1>
+
+    <h2>التهمة:</h2>
+    <p>سرقة قلب نور بدون إذن رسمي 😌💘</p>
+
+    <div class="evidence">
+        <h3>📂 الأدلة:</h3>
+        <p>🌹 ابتسامته الجميلة</p>
+        <p>💌 كلامه الحلو</p>
+        <p>✨ جماله الساحر</p>
+    </div>
+
+    <h2>الحكم المقترح:</h2>
+
+    <button class="love" onclick="acceptSentence()">
+        ❤️ السجن المؤبد بقلب نور 
+    </button>
+
+    <button class="reject" onclick="rejectSentence()">
+        😂 الاعتراض على الحكم
+    </button>
+
+</div>
+
+<div class="card" id="result">
+    <h1>🎉 تم تثبيت الحكم 🎉</h1>
+    <h2>❤️ السجن المؤبد بقلب نور ❤️</h2>
+    <p>
+        بعد دراسة القضية بالكامل،
+        قررت المحكمة أن المتهم مذنب بسرقة القلب،
+        وتم رفض جميع طلبات الإفراج 😆💕
+    </p>
+</div>
+
+<script>
+
+function rejectSentence(){
+    alert("😂 تم رفض الاعتراض لعدم وجود سبب مقنع!");
+}
+
+function acceptSentence(){
+
+    document.getElementById("court").style.display="none";
+    document.getElementById("result").style.display="block";
+
+    setInterval(createHeart,250);
+}
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.classList.add("heart");
+    heart.innerHTML=["❤️","💕","💖","💘","🌹"][Math.floor(Math.random()*5)];
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.bottom="-20px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },5000);
+}
+
+</script>
+
+</body>
+</html>
